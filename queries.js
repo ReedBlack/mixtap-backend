@@ -2,27 +2,27 @@ const database = require("./database-connection");
 
 module.exports = {
     list() {
-        return database("mixTable").select();
+        return database("mixtable").select();
     },
     read(id) {
-        return database("mixTable")
+        return database("mixtable")
             .select()
             .where("id", id)
             .first();
     },
-    create(mixTable) {
-        return database("mixTable")
-            .insert(mixTable)
+    create(mixtable) {
+        return database("mixtable")
+            .insert(mixtable)
             .returning("*")
             .then(record => record[0]);
     },
-    update(id, mixTable) {
-        return database("mixTable")
+    update(id, mixtable) {
+        return database("mixtable")
             .where("id", id)
-            .update(mixTable, "*")
+            .update(mixtable, "*")
             .then(record => record[0]);
     },
     delete(id) {
-        return database("mixTable").where("id", id).del()
+        return database("mixtable").where("id", id).del()
     }
 };

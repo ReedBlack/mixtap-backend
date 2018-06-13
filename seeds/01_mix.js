@@ -1,9 +1,9 @@
 exports.seed = function (knex, Promise) {
   // Deletes ALL existing entries
-  return knex('mixTable').del()
+  return knex('mixtable').del()
     .then(function () {
       // Inserts seed entries
-      return knex('mixTable').insert([{
+      return knex('mixtable').insert([{
           id: 1,
           DJ: "Reed Black",
           Title: "September 2017 Yoga Mix",
@@ -27,6 +27,6 @@ exports.seed = function (knex, Promise) {
       ])
     })
     .then(() => {
-      return knex.raw("ALTER SEQUENCE mixTable_id_seq RESTART WITH 4;")
+      return knex.raw("ALTER SEQUENCE mixtable_id_seq RESTART WITH 4;")
     })
 };

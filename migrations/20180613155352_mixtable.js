@@ -1,5 +1,5 @@
 exports.up = function (knex, Promise) {
-    return knex.schema.createTable("mixTable", table => {
+    return knex.schema.createTable("mixtable", table => {
         table.increments('id')
         table.text('DJ')
         table.text('Title')
@@ -9,5 +9,5 @@ exports.up = function (knex, Promise) {
 };
 
 exports.down = function (knex, Promise) {
-    return knex.schema.dropTableIfExists('mixTable')
+    return knex.schema.dropTableIfExists('mixtable')
 };

@@ -4,19 +4,19 @@ const router = express.Router();
 const queries = require('../queries');
 
 router.get("/", (request, response, next) => {
-    queries.list().then(mixTables => {
+    queries.list().then(mixtables => {
         response.json({
-            mixTables
+            mixtables
         });
     }).catch(next);
 });
 
 router.get("/:id", (request, response, next) => {
-    queries.read(request.params.id).then(mixTable => {
-        mixTable
+    queries.read(request.params.id).then(mixtable => {
+        mixtable
             ?
             response.json({
-                mixTable
+                mixtable
             }) :
             response.status(404).json({
                 message: 'Not found'
@@ -25,9 +25,9 @@ router.get("/:id", (request, response, next) => {
 });
 
 router.post("/", (request, response, next) => {
-    queries.create(request.body).then(mixTable => {
+    queries.create(request.body).then(mixtable => {
         response.status(201).json({
-            mixTable: mixTable
+            mixtable: mixtable
         });
     }).catch(next);
 });
@@ -41,9 +41,9 @@ router.delete("/:id", (request, response, next) => {
 });
 
 router.put("/:id", (request, response, next) => {
-    queries.update(request.params.id, request.body).then(mixTable => {
+    queries.update(request.params.id, request.body).then(mixtable => {
         response.json({
-            mixTable: mixTable[0]
+            mixtable: mixtable[0]
         });
     }).catch(next);
 });
