@@ -1,7 +1,7 @@
 module.exports = {
   development: {
     client: "pg",
-    connection: "postgres://localhost/mixtapDB"
+    connection: "postgresql://localhost/mixtapDB"
   },
 
   production: {
