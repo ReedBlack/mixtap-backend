@@ -6,7 +6,7 @@ exports.seed = function (knex, Promise) {
       return knex('mixtable').insert([{
           id: 1,
           DJ: "Reed Black",
-          Title: "September 2017 Yoga Mix",
+          Title: "2016 Promo Dopeness",
           Mixlink: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/Reed+Black+at+Emily's+101316.mp3",
           Tags: "chill house lounge funk groove hip-hop"
         },
