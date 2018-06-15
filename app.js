@@ -40,10 +40,10 @@ app.get("/upload", (request, response, next) => {
     });
 });
 
-app.post("/upload", upload.array("audio", 1), (request, response) => {
+app.post("/upload", upload.single("audio"), (request, response) => {
     console.log(request)
     response.json({
-        audioUrl: `${request.files[0].location}`
+        audioUrl: `${request.file.location}`
     });
 });
 
