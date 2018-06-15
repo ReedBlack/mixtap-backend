@@ -40,12 +40,16 @@ app.get("/upload", (request, response, next) => {
     });
 });
 
-app.post("/upload", upload.single("audio"), (request, response) => {
-    console.log(request)
-    response.json({
-        audioUrl: `${request.file.location}`
+app.post("/upload",
+    function (request, response, next) {
+        console.log(request)
+    },
+    upload.single("audio"), (request, response) => {
+        console.log(request)
+        response.json({
+            audioUrl: `${request.file.location}`
+        });
     });
-});
 
 app.get("/mixes", (request, response, next) => {
     queries
