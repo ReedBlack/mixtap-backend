@@ -10,7 +10,19 @@ const aws = require("aws-sdk");
 const multer = require("multer");
 const queries = require("./queries");
 
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
+
+if (app.get('env') == 'production') {
+    app.use(morgan('common', {
+        skip: function (req, res) {
+            return res.statusCode < 400
+        },
+        stream: __dirname + '/../morgan.log'
+    }));
+} else {
+    app.use(morgan('dev'));
+}
+
 app.use(bodyParser.json());
 app.use(cors())
 app.use("/mixes", mixes);
