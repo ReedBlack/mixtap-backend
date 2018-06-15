@@ -41,6 +41,7 @@ app.get("/upload", (request, response, next) => {
 });
 
 app.post("/upload", upload.array("audio", 1), (request, response) => {
+    console.log(request)
     response.json({
         audioUrl: `${request.files[0].location}`
     });
