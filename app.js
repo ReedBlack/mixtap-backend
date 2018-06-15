@@ -41,6 +41,28 @@ app.post("/upload", upload.array("audio", 1), (request, response) => {
     });
 });
 
+app.get("/mixes", (request, response, next) => {
+    queries
+        .list()
+        .then(mixes => {
+            response.json({
+                mixes
+            });
+        })
+        .catch(next);
+});
+
+app.post("/mixes", (request, response, next) => {
+    console.log("body is   ", request.body);
+    queries
+        .create(request.body)
+        .then(mix => {
+            response.status(201).json({
+                mix
+            });
+        })
+        .catch(next);
+});
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
