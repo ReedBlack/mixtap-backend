@@ -10,6 +10,11 @@ const aws = require("aws-sdk");
 const multer = require("multer");
 const queries = require("./queries");
 
+app.use(morgan('dev'));
+app.use(bodyParser.json());
+app.use(cors())
+app.use("/mixes", mixes);
+
 const s3 = new aws.S3({
     apiVersion: "2006-03-01",
     region: "us-east-1",
@@ -64,10 +69,6 @@ app.post("/mixes", (request, response, next) => {
         .catch(next);
 });
 
-app.use(morgan('dev'));
-app.use(bodyParser.json());
-app.use(cors())
-app.use("/mixes", mixes);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
