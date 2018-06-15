@@ -7,21 +7,21 @@ exports.seed = function (knex, Promise) {
           id: 1,
           DJ: "Reed Black",
           Title: "September 2017 Yoga Mix",
-          selectedFile: null,
-          Tags: "chill meditation lounge yoga"
+          Mixlink: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/Reed+Black+at+Emily's+101316.mp3",
+          Tags: "chill house lounge funk groove hip-hop"
         },
         {
           id: 2,
-          DJ: "Vince Staples",
-          Title: "Yeah Right",
-          selectedFile: null,
-          Tags: "rap bass hip-hop"
+          DJ: "Nero",
+          Title: "BBC Essential Mix 2015",
+          Mixlink: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/Nero+2015+Essential+Mix.mp3",
+          Tags: "EDM club dance dubstep house"
         },
         {
           id: 3,
           DJ: "Bob Moses",
           Title: "BBC Essential Mix 2016",
-          selectedFile: null,
+          Mixlink: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/01+Bob+Moses+Essential+Mix-SAT-03-05-2016.mp3",
           Tags: "chill house lounge experimental"
         }
       ])

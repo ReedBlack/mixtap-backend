@@ -3,7 +3,7 @@ exports.up = function (knex, Promise) {
         table.increments('id')
         table.text('DJ')
         table.text('Title')
-        table.text('selectedFile')
+        table.text('Mixlink')
         table.text('Tags')
     })
 };
