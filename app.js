@@ -5,10 +5,12 @@ const morgan = require("morgan");
 const app = express();
 const cors = require('cors');
 const mixes = require("./routes/mixes");
+const favmixes = require("./routes/favmixes");
 const multerS3 = require("multer-s3");
 const aws = require("aws-sdk");
 const multer = require("multer");
 const queries = require("./queries");
+const favqueries = require("./queries_favmixes");
 
 app.use(morgan('dev'));
 
@@ -16,6 +18,7 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(cors())
 app.use("/mixes", mixes);
+app.use("/favmixes", favmixes);
 
 const s3 = new aws.S3({
     apiVersion: "2006-03-01",
