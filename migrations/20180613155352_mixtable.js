@@ -5,6 +5,7 @@ exports.up = function (knex, Promise) {
         table.text('Title')
         table.text('Mixlink')
         table.text('Tags')
+        table.integer('Likes')
     })
 };
 
