@@ -73,6 +73,15 @@ app.post("/mixes", (request, response, next) => {
         .catch(next);
 });
 
+app.get("/favmixes", (request, response) => {
+    database("favmixes")
+        .select()
+        .then(favmixes => {
+            response.send({
+                favmixes
+            });
+        });
+});
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
