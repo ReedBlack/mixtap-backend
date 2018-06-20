@@ -65,9 +65,9 @@ app.post("/mixes", (request, response, next) => {
     console.log("body is   ", request.body);
     queries
         .create(request.body)
-        .then(mix => {
+        .then(fav => {
             response.status(201).json({
-                mix
+                fav
             });
         })
         .catch(next);
