@@ -83,6 +83,17 @@ app.get("/favmixes", (request, response) => {
         });
 });
 
+app.post("/favmixes", (request, response, next) => {
+    favqueries
+        .create(request.body)
+        .then(fav => {
+            response.status(201).json({
+                fav
+            });
+        })
+        .catch(next);
+});
+
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
     const err = new Error("Not Found");
