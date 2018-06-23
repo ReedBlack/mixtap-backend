@@ -9,6 +9,7 @@ exports.seed = function (knex, Promise) {
           Title: "2016 Promo Dopeness",
           Mixlink: "https://s3-ap-southeast-1.amazonaws.com/mixtap-mixes/Reed+Black+at+Emily's+101316.mp3",
           Tags: "chill house lounge funk groove hip-hop",
+          Heard: false,
           Likes: 3
         }
 
